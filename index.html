@@ -311,6 +311,68 @@
     .mini-card span { display: block; color: var(--primary); font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
     .mini-card strong { font-size: 22px; line-height: 1.1; }
 
+
+    /* Fixed professional stats strip - prevents plain text display */
+    .stats {
+      padding: 34px 0;
+      background: #23140e;
+      color: var(--white);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(36,22,16,0.12);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .stat-card {
+      padding: 24px 26px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.075);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 18px 42px rgba(0,0,0,0.12);
+    }
+    .stat-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #ffd9b4;
+      font-size: 30px;
+      line-height: 1.05;
+      font-weight: 900;
+    }
+    .stat-card span {
+      display: block;
+      color: #e8c9b4;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    /* Image fallback: no broken image icon, no blank empty cards */
+    .visual-inner,
+    .about-photo,
+    .gallery-card {
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.32), transparent 28%),
+        linear-gradient(135deg, #efd8bf 0%, #d9b999 55%, #a98972 100%);
+    }
+    .visual-inner.is-missing::before,
+    .about-photo.is-missing::before,
+    .gallery-card.is-missing::before {
+      content: "JR";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(123,45,29,0.22);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(62px, 10vw, 124px);
+      font-weight: 800;
+      letter-spacing: -3px;
+    }
+    .about-photo { position: relative; }
+    .gallery-card.is-missing span { z-index: 3; }
+
     section { padding: 88px 0; }
     .section-head { max-width: 780px; margin-bottom: 42px; }
     .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
@@ -560,7 +622,7 @@
 
           <div class="hero-visual" aria-label="Jaipur Retro Cafe ambience">
             <div class="visual-inner">
-              <img src="assets/images/hero-cafe.jpg" alt="Jaipur Retro Cafe rooftop ambience" onerror="this.src='assets/images/gallery-1.jpg'" />
+              <img src="assets/images/hero-cafe.jpg" alt="Jaipur Retro Cafe rooftop ambience" onerror="this.parentElement.classList.add('is-missing'); this.remove();" />
               <div class="floating-card">
                 <div class="rating-box">4.3</div>
                 <div>
@@ -612,7 +674,7 @@
       <div class="container">
         <div class="about-grid">
           <div class="about-photo">
-            <img src="assets/images/about-cafe.jpg" alt="Indoor and outdoor seating at Jaipur Retro Cafe" />
+            <img src="assets/images/about-cafe.jpg" alt="Indoor and outdoor seating at Jaipur Retro Cafe" onerror="this.parentElement.classList.add('is-missing'); this.remove();" />
           </div>
           <div>
             <div class="section-head" style="margin-bottom:0;">
@@ -698,11 +760,11 @@
           <p>Explore the rooftop vibe, indoor ambience, food, beverages and group hangout moments before you visit.</p>
         </div>
         <div class="gallery-grid">
-          <div class="gallery-card large"><img src="assets/images/gallery-1.jpg" alt="Rooftop seating at Jaipur Retro Cafe" /><span>Rooftop Seating</span></div>
-          <div class="gallery-card"><img src="assets/images/gallery-2.jpg" alt="Cafe food at Jaipur Retro Cafe" /><span>Food & Beverages</span></div>
-          <div class="gallery-card"><img src="assets/images/gallery-3.jpg" alt="Indoor seating at Jaipur Retro Cafe" /><span>Indoor Ambience</span></div>
-          <div class="gallery-card"><img src="assets/images/gallery-4.jpg" alt="Friends hanging out at Jaipur Retro Cafe" /><span>Hangout Vibe</span></div>
-          <div class="gallery-card"><img src="assets/images/gallery-5.jpg" alt="Evening rooftop ambience Jaipur Retro Cafe" /><span>Evening Plans</span></div>
+          <div class="gallery-card large"><img src="assets/images/gallery-1.jpg" alt="Rooftop seating at Jaipur Retro Cafe" onerror="this.parentElement.classList.add(\'is-missing\'); this.remove();" /><span>Rooftop Seating</span></div>
+          <div class="gallery-card"><img src="assets/images/gallery-2.jpg" alt="Cafe food at Jaipur Retro Cafe" onerror="this.parentElement.classList.add(\'is-missing\'); this.remove();" /><span>Food & Beverages</span></div>
+          <div class="gallery-card"><img src="assets/images/gallery-3.jpg" alt="Indoor seating at Jaipur Retro Cafe" onerror="this.parentElement.classList.add(\'is-missing\'); this.remove();" /><span>Indoor Ambience</span></div>
+          <div class="gallery-card"><img src="assets/images/gallery-4.jpg" alt="Friends hanging out at Jaipur Retro Cafe" onerror="this.parentElement.classList.add(\'is-missing\'); this.remove();" /><span>Hangout Vibe</span></div>
+          <div class="gallery-card"><img src="assets/images/gallery-5.jpg" alt="Evening rooftop ambience Jaipur Retro Cafe" onerror="this.parentElement.classList.add(\'is-missing\'); this.remove();" /><span>Evening Plans</span></div>
         </div>
       </div>
     </section>
