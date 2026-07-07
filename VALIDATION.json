@@ -1,0 +1,71 @@
+{
+  "referenced_images": [
+    "assets/images/about-cafe.jpg",
+    "assets/images/cta-cafe.jpg",
+    "assets/images/drink-cream.jpg",
+    "assets/images/food-chaat.jpg",
+    "assets/images/food-noodles.jpg",
+    "assets/images/food-rolls.jpg",
+    "assets/images/gallery-1.jpg",
+    "assets/images/gallery-2.jpg",
+    "assets/images/gallery-3.jpg",
+    "assets/images/gallery-4.jpg",
+    "assets/images/gallery-5.jpg",
+    "assets/images/hero-cafe.jpg"
+  ],
+  "missing_images": [],
+  "image_sizes": {
+    "hero-cafe.jpg": [
+      680,
+      510
+    ],
+    "about-cafe.jpg": [
+      680,
+      510
+    ],
+    "gallery-1.jpg": [
+      680,
+      510
+    ],
+    "gallery-2.jpg": [
+      382,
+      510
+    ],
+    "gallery-3.jpg": [
+      382,
+      510
+    ],
+    "gallery-4.jpg": [
+      680,
+      510
+    ],
+    "gallery-5.jpg": [
+      382,
+      510
+    ],
+    "cta-cafe.jpg": [
+      287,
+      510
+    ],
+    "food-noodles.jpg": [
+      340,
+      510
+    ],
+    "food-chaat.jpg": [
+      382,
+      510
+    ],
+    "food-rolls.jpg": [
+      680,
+      510
+    ],
+    "drink-cream.jpg": [
+      382,
+      510
+    ],
+    "interior-wide.jpg": [
+      680,
+      510
+    ]
+  }
+}
